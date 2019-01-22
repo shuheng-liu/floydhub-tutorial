@@ -26,7 +26,7 @@ This is a brief tutorial on Floydhub intended for students in *Deep Learning Adv
 
 3. Login on your local machine: run  `floyd login -u <YOUR_USER_NAME>` on your terminal, where `<YOUR_USER_NAME>` should be replaced with your username when creating your account. When prompted to input password, just type in your password and hit enter. The output should look like this
 
-   ```bash
+   ```
    > floyd login -u <YOUR_USER_NAME>
    Login with your FloydHub username and password to run jobs.
    Password:
@@ -244,6 +244,6 @@ __For each FloydHub instance, only outputs in the /output folder is collected. T
 
 ### Tensorboard [Optional]
 
-While a job is still running, a link to a tensorboard server should appear on the job's webpage. If you know how to use tensorboard (or `tensorboardX` for PyTorch) you can instantiate `SummaryWriter`s to save summaries in the `output` folder. 
+While a job is still running, a link to a tensorboard server should appear on the job's webpage. If you know how to use tensorboard (or `tensorboardX` for PyTorch) you can instantiate `SummaryWriter`s to save summaries in the `/output` folder. 
 
 When the job terminates (with state failed/success/shutdown), the tensorboard server is also shutdown. If you want to analyze your metrics, download the summary files in the Output tab and start a tensorboard server locally. Alternatively, start a new job (on a CPU instance for cost-efficiency), mount the output of the orignal job, `cp` all summary files to `/output` folder of the new job, and hang the job indefinitely. You can manually shutdown the job once you are finished analyzing the metrics.
