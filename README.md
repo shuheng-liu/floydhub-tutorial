@@ -1,6 +1,6 @@
 # FloydHub Tutorial (GEC Academy)
 
-This is a breif FloydHub Tutorial intended for students in *Deep Learning Advanced Course* with GEC Academy. All students are encouraged to read this tutorial before using FloydHub's service. For a complete and official doc, please refer to FloydHub docs [homepage](https://docs.floydhub.com/). If you still have any questions pertaining to the usage of FloydHub, please consult the TAs or contact FloydHub support yourself.
+This is a breif FloydHub Tutorial intended for students in *Deep Learning Advanced Course* with GEC Academy. All students are encouraged to read this tutorial before using FloydHub's service. For a complete and official doc, please refer to FloydHub [docs homepage](https://docs.floydhub.com/). If you still have any questions pertaining to the usage of FloydHub, please consult the TAs or contact FloydHub support yourself.
 
 ## Setup
 
@@ -171,7 +171,7 @@ In the Input Data tab is a description of all datasets mounted for the job.
 
 This tab may not appear on the webpage if you have no output files, or output files whose total size is smaller than 20 KiB. If the tab does not appear, you can still go to it by appending `output` to you job's URL. For example, even though the job `https://www.floydhub.com/wish1104/projects/character-recognition/58/` has no "Output" tab on its web page, you can go to `https://www.floydhub.com/wish1104/projects/character-recognition/58/output` to see its output.
 
-**For each FloydHub instance, only outputs in the `/output` folder is collected. Therefore, you must always save output files to the `/output` folder. Otherwise, output files will not be saved or a `PermissionError` will occur. **
+__For each FloydHub instance, only outputs in the /output folder is collected. Therefore, you must always save output files to the /output folder. Otherwise, output files will not be saved or a PermissionError will occur.__
 
 ### Tensorboard [Optional]
 
