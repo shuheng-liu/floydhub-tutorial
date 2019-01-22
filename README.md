@@ -2,6 +2,22 @@
 
 This is a breif FloydHub Tutorial intended for students in *Deep Learning Advanced Course* with GEC Academy. All students are encouraged to read this tutorial before using FloydHub's service. For a complete and official doc, please refer to FloydHub [docs homepage](https://docs.floydhub.com/). If you still have any questions pertaining to the usage of FloydHub, please consult the TAs or contact FloydHub support yourself.
 
+* [Setup](#setup)
+* [Purchase GPU/CPU time and storage space](#purchase-gpucpu-time-and-storage-space)
+* [Manage datasets](#manage-datasets)
+* [Create projects](#create-projects)
+* [Run jobs](#run-jobs)
+  + [Instance type](#instance-type)
+  + [Python environment and dependencies](#python-environment-and-dependencies)
+  + [Datasets](#datasets)
+  + [Messages](#messages)
+  + [Run-commands](#run-commands)
+* [Monitor your jobs](#monitor-your-jobs)
+  + [The Overview tab](#the-overview-tab)
+  + [The Files tab & the Input Data tab](#the-files-tab--the-input-data-tab)
+  + [The Output tab](#the-output-tab)
+  + [Tensorboard [Optional]](#tensorboard-optional)
+
 ## Setup
 
 1. Go to FloydHub's [Homepage](https://www.floydhub.com/run?template=https://github.com/floydhub/sentiment-analysis-template) and create your own account.
