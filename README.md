@@ -12,7 +12,7 @@ This is a breif FloydHub Tutorial intended for students in *Deep Learning Advanc
   + [Datasets](#datasets)
   + [Messages](#messages)
   + [Run-commands](#run-commands)
-* [Monitor your jobs](#monitor-your-jobs)
+* [Monitor jobs](#monitor-jobs)
   + [The Overview tab](#the-overview-tab)
   + [The Files tab & the Input Data tab](#the-files-tab--the-input-data-tab)
   + [The Output tab](#the-output-tab)
@@ -74,7 +74,7 @@ This command is broken down as follows.
 
 Are you running on a CPU instance or a GPU instance? You can specify the instance type with one of the following `--cpu`, `--gpu`, `--cpu2`, `--gpu2`. If none of them is supplied, the job will be run on a `cpu` machine by default.
 
-Make sure you have enough instance time as jobs will be shutdown once you run out of your instance time. One way to prevent this is to enable **auto refresh** of your instance time.
+Make sure you have enough instance time as jobs will be shutdown once you run out of time. One way to prevent this is to enable **auto refresh** of your instance time.
 
 ### Python environment and dependencies
 
@@ -82,7 +82,7 @@ What libraries are imported in your program? Is it tensorflow, pytorch, mxnet or
 
 For example, use `--env tensorflow` for a tensorflow environment, or `--env pytorch` for a pytorch environment. You can also specify the version of the environment with something like `--env pytorch-0.4` or `--env pytorch-1.0` for pytorch v0.4 or v1.0. 
 
-Many packages are installed by default, including `scikit-learn`, `numpy` and other common libraries used in data science. If you need to import some other libraries, you need to create a file named `floyd_requirements.txt` in the project folder. In each line of this folder, write the name of a package. Note that packages listed here must be available on PyPI. For example the following `floyd_requirements.txt` file will install (via `pip`) `tensorboardX` (version 1.6) and default `nltk`, `gensim`, `mlxtend`.
+Many packages are installed by default, including`h5py`, `iPython`, `Jupyter`, `matplotlib`, `numpy`, `OpenCV`, `Pandas`, `Pillow`, `scikit-learn`, `scipy`, and `sklearn`. If you need to import some other libraries, you need to create a file named `floyd_requirements.txt` in the project folder. In each line of this folder, write the name of a package. Note that packages listed here must be available on PyPI. For example the following `floyd_requirements.txt` file will install (via `pip`) `tensorboardX` (version 1.6) and default `nltk`, `gensim`, `mlxtend`.
 
 ```
 tensorboardX==1.6
@@ -138,7 +138,7 @@ value of z is 0
 
 However, the output of the job is not directly rendered to your terminal. To read your output and monitor you jobs, refer to the next part of this tutorial.
 
-## Monitor your jobs
+## Monitor jobs
 
 After running your job, you should see something like this on your terminal.
 
@@ -193,4 +193,4 @@ __For each FloydHub instance, only outputs in the /output folder is collected. T
 
 While a job is still running, a link to a tensorboard server should appear on the job's webpage. If you know how to use tensorboard (or `tensorboardX` for PyTorch) you can instantiate `SummaryWriter`s to save summaries in the `output` folder. 
 
-When the job terminates (with state failed/sucess/shutdown), the tensorboard server is also shutdown. If you want to analyze your metrics, either download the summary files in the Output tab. Alternatively, start a new job (on a CPU instance for cost-efficiency), mount the output of the orignal job, `cp` all summary files to `/output` folder of the new job, and hang the job indefinitely. You can manually shutdown the job once you are finished analyzing the metrics.
+When the job terminates (with state failed/success/shutdown), the tensorboard server is also shutdown. If you want to analyze your metrics, download the summary files in the Output tab and start a tensorboard server locally. Alternatively, start a new job (on a CPU instance for cost-efficiency), mount the output of the orignal job, `cp` all summary files to `/output` folder of the new job, and hang the job indefinitely. You can manually shutdown the job once you are finished analyzing the metrics.
