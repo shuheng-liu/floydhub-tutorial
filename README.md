@@ -1,6 +1,10 @@
 # FloydHub Tutorial (GEC Academy)
 
-This is a brief tutorial on Floydhub intended for students in *Deep Learning Advanced Course* with GEC Academy. All students are assumed to have basic knowledge of Unix systems and encouraged to read this tutorial before using FloydHub's service. For a complete and official doc, please refer to FloydHub [docs page](https://docs.floydhub.com/). If there still are questions pertaining to the usage of FloydHub, please consult the TAs or contact FloydHub support yourself.
+This is a brief tutorial on Floydhub intended for students in *Deep Learning Advanced Course* with GEC Academy. All students are assumed to have basic knowledge of Unix systems and encouraged to read this tutorial before using FloydHub's service. 
+
+For a complete and official doc, please refer to FloydHub [docs page](https://docs.floydhub.com/). If there still are questions pertaining to the usage of FloydHub, please consult the TAs or contact FloydHub support yourself.
+
+Although FloydHub offers some degree of version control, it is still recommended to use another VCS such as `git` if you are familiar with it. 
 
 * [Setup](#setup)
 * [Purchase GPU/CPU time and storage space](#purchase-gpucpu-time-and-storage-space)
@@ -97,12 +101,12 @@ To make your dataset accessible to a job, you will need to **mount** the dataset
 
    ```
    image_dataset/
-   .git
+   .git/
    *.pyc
    *.jpg
    ```
 
-   This file named `.floydignore` tells the floydhub client to ignore anything in the `image_dataset/` or `.git`sub-folder and any file than ends with .`pyc` or `.jpg`; i.e., these files will not be synced when a job is run.
+   This file named `.floydignore` tells the floydhub client to ignore anything in the `image_dataset/` or `.git/`sub-folder and any file than ends with .`pyc` or `.jpg`; i.e., these files will not be synced when a job is run.
 
 ## Run jobs
 
