@@ -202,12 +202,12 @@ Syncing code ...
 
 JOB NAME
 ------------------------------------------
-wish1104/projects/character-recognition/58
+wish1104/projects/character-recognition/57
 
-URL to job: https://www.floydhub.com/wish1104/projects/character-recognition/58
+URL to job: https://www.floydhub.com/wish1104/projects/character-recognition/57
 
 To view logs enter:
-   floyd logs wish1104/projects/character-recognition/58
+   floyd logs wish1104/projects/character-recognition/57
 ```
 
 Open the "`URL to job`" in your browser, you will go to the job's webpage.
