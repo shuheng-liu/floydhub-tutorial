@@ -1,6 +1,6 @@
 # FloydHub Tutorial (GEC Academy)
 
-This is a brief tutorial on Floydhub intended for students in *Deep Learning Advanced Course* with GEC Academy. All students are assumed to have basic knowledge of Unix systems and encouraged to read this tutorial before using FloydHub's service. For a complete and official doc, please refer to FloydHub [docs homepage](https://docs.floydhub.com/). If there still are questions pertaining to the usage of FloydHub, please consult the TAs or contact FloydHub support yourself.
+This is a brief tutorial on Floydhub intended for students in *Deep Learning Advanced Course* with GEC Academy. All students are assumed to have basic knowledge of Unix systems and encouraged to read this tutorial before using FloydHub's service. For a complete and official doc, please refer to FloydHub [docs page](https://docs.floydhub.com/). If there still are questions pertaining to the usage of FloydHub, please consult the TAs or contact FloydHub support yourself.
 
 * [Setup](#setup)
 * [Purchase GPU/CPU time and storage space](#purchase-gpucpu-time-and-storage-space)
@@ -14,7 +14,7 @@ This is a brief tutorial on Floydhub intended for students in *Deep Learning Adv
   + [Run-commands](#run-commands)
 * [Monitor jobs](#monitor-jobs)
   + [The Overview tab](#the-overview-tab)
-  + [The Files tab & the Input Data tab](#the-files-tab--the-input-data-tab)
+  + [The Files tab & Input Data tab](#the-files-tab--input-data-tab)
   + [The Output tab](#the-output-tab)
   + [Tensorboard [Optional]](#tensorboard-optional)
 
@@ -216,29 +216,45 @@ Here, you will see several tabs: `Overview`, `Files`,`Input Data`, `Settings`, a
 
 ### The Overview tab
 
+![a](resources/tabs.jpg)
+
 In the `Overview` tab, you will see a label at the top right corner of the webpage (just under your profile image), which says `Queued`, `Success`, `Running`, ` Shutdown` or `Failed`, indicating the current status of the job. 
 
 You can also see the **system metrics** (collected every minute) about the utilization of CPU, GPU and SSD.
 
-Meanwhile, the **training metrics** are automatically parsed from the `stdout` of your job. For a metric point to be parsed, print it in json format like this:
+![a](resources/system-metrics.jpg)
+
+Meanwhile, the **training metrics** are automatically parsed from the `stdout` of your job. 
+
+![a](resources/training-metrics.jpg)
+
+For a metric point to be parsed, print it in json format like this:
 
 ```python
-print('{"metric": "<metric_name>", "value": <int_or_float>, "epoch": <int>}'). 
+print('{"metric": "<metric_name>", "value": <int_or_float>, "step": <int>}'). 
 ```
 
 **IMPORTANT: It is imperative to print your metrics for every few epochs so that we can assess your model performance. Some metrics to be included are loss/cost, accuracy, precision, recall, F-score (if pertinent) for both training and validation phase** (Detailed instructions [here](https://docs.floydhub.com/guides/jobs/metrics/).)
 
 Also, the `stdout` (e.g. everything you `print()` in python) will be displayed in the `logs` section, as you can see a black text field that resembles a terminal.
 
-### The Files tab & the Input Data tab
+![a](resources/logs.jpg)
+
+### The Files tab & Input Data tab
 
 In the Files tab is a copy of your local project folder at the time a job is run. Not surprisingly, files/folders whose names are present in the `.floydignore` file are not inlcuded.
 
+![a](resources/files-tab.jpg)
+
 In the Input Data tab is a description of all datasets mounted for the job.
+
+![a](resources/input-data-tab.jpg)
 
 ### The Output tab
 
 This tab may not appear on the webpage if you have no output files, or output files whose total size is smaller than 20 KiB. If the tab does not appear, you can still find it by appending the string `output` to you job's URL. For example, even though the job `www.floydhub.com/wish1104/projects/character-recognition/58/` has no "Output" tab on its web page, you can go to `www.floydhub.com/wish1104/projects/character-recognition/58/output` to see its output.
+
+![a](resources/output-tab.jpg)
 
 __For each FloydHub instance, only outputs in the /output folder is collected. Therefore, you must always save output files to the /output folder. Otherwise, output files will not be saved or a PermissionError will occur.__
 
