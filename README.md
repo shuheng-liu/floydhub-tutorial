@@ -107,6 +107,8 @@ To make your dataset accessible to a job, you will need to **mount** the dataset
 
 Finally, we can run our jobs with the `floyd run ...` command, where  `...` stands for additional specifications. A typical "floyd run" command looks like this.
 
+![a](resources/floyd-run.png)
+
 ```bash
 floyd run --gpu --env pytorch-1.0 --data wish1104/datasets/emnist/1:data --message 'pytorch alexnet on 62 classes, batch_size = 512' 'python pytorch_models/train.py --folder /data --param_summarize_period 20'
 ```
