@@ -26,9 +26,11 @@ Although FloydHub offers some degree of version control, it is still recommended
 
 1. Go to FloydHub's [homepage](https://www.floydhub.com/run?template=https://github.com/floydhub/sentiment-analysis-template) and create your own account.
 
-2. Install FloydHub command line on your local machine: open terminal and run `pip install -U floydhub-cli`. Note that if you change your python environment with anaconda, you might need to run the above install command again.
+2. Install FloydHub command line on your local machine: open terminal and run `pip install -U floydhub-cli`. Note that if you change your python environment with anaconda, you might need to run the above install command again.![a](resources/floyd-install.png)
 
-3. Login on your local machine: run  `floyd login -u <YOUR_USER_NAME>` on your terminal, where `<YOUR_USER_NAME>` should be replaced with your username when creating your account. When prompted to input password, just type in your password and hit enter. The output should look like this
+3. Login on your local machine: run  `floyd login -u <YOUR_USER_NAME>` on your terminal, where `<YOUR_USER_NAME>` should be replaced with your username when creating your account. When prompted to input password, just type in your password and hit enter. ![a](resources/floyd-login.png)
+
+   The output should look like this
 
    ```
    > floyd login -u <YOUR_USER_NAME>
@@ -52,9 +54,9 @@ To train a model, a dataset must be fed to it. You can just use the datasets mad
 
 2. Open terminal and `cd` into the dataset folder on your local machine.
 
-3. Run the command `floyd data init <YOUR_DATASET_NAME>` where `<YOUR_DATASET_NAME>` should be replaced by your own dataset's name.
+3. Run the command `floyd data init <YOUR_DATASET_NAME>` where `<YOUR_DATASET_NAME>` should be replaced by your own dataset's name.![a](resources/floyd-data-init.png)
 
-4. Run `floyd data upload` to upload your dataset. This can take a while depending on your internet connection.
+4. Run `floyd data upload` to upload your dataset. This can take a while depending on your internet connection.![a](resources/floyd-data-upload.png)
 
    You should see the following output
 
@@ -95,16 +97,9 @@ To make your dataset accessible to a job, you will need to **mount** the dataset
 
 2. Write your codes locally, and save them under a local folder.
 
-3. `cd` into the folder and run `floyd init <YOUR_PROJECT_NAME>`, where `<YOUR_PROJECT_NAME>` should be replaced with your own project's name.
+3. `cd` into the folder and run `floyd init <YOUR_PROJECT_NAME>`, where `<YOUR_PROJECT_NAME>` should be replaced with your own project's name.![a](resources/floyd-init.png)
 
-4. Make sure that your code folder is not too large. A folder containing codes should be typically less then a few MB's. Every time you run a job, all files in the folder are synced to FloydHub's server. If you do not want upload some of the content under the folder, you need to create a file named  `.floydignore`, and put in it everything you don't want to upload. For example, a `.floydignore` file can look like this: 
-
-   ```
-   image_dataset/
-   .git/
-   *.pyc
-   *.jpg
-   ```
+4. Make sure that your code folder is not too large. A folder containing codes should be typically less then a few MB's. Every time you run a job, all files in the folder are synced to FloydHub's server. If you do not want upload some of the content under the folder, you need to create a file named  `.floydignore`, and put in it everything you don't want to upload. For example, a `.floydignore` file can look like this: ![a](resources/floyd-ignore.png)
 
    This file named `.floydignore` tells the floydhub client to ignore anything in the `image_dataset/` or `.git/`sub-folder and any file than ends with .`pyc` or `.jpg`; i.e., these files will not be synced when a job is run.
 
@@ -134,12 +129,7 @@ Many packages are installed by default, including`h5py`, `iPython`, `Jupyter`, `
 
 For example the following `floyd_requirements.txt` file will install (via `pip`) `tensorboardX` (version 1.6) and default `nltk`, `gensim`, `mlxtend`.
 
-```
-tensorboardX==1.6
-nltk
-gensim
-mlxtend
-```
+![a](resources/floyd-requirements.png)
 
 ### Datasets
 
